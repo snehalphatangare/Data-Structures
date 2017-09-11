@@ -7,9 +7,6 @@ public class SelectionSort {
 		int arr[] = {1,4,4,6,8,3};
 		int[] ans = selectionSort(arr);
 		System.out.println(Arrays.toString(ans));
-		
-		/*ans = bubbleSortOptimized(arr);
-		System.out.println(Arrays.toString(ans));*/
 	}
 	
 	// average, worst complexity O(n^2)
