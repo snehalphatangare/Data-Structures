@@ -13,8 +13,8 @@ public class BubbleSort {
 		System.out.println(Arrays.toString(ans));
 	}
 	
-	// average worst complexity O(n^2)
-		// best O(n)
+		// average, worst complexity O(n^2)
+		// best O(n^2)
 		//space O(1)
 		// compare two elements and put largest lelement in last
 		public static int[] bubbleSort(int arr[]){
@@ -39,6 +39,9 @@ public class BubbleSort {
 		
 		//The above function always runs O(n^2) time even if the array is sorted. It can be optimized by
 		//stopping the algorithm if inner loop didn’t cause any swap.
+		// average, worst complexity O(n^2)
+		// best O(n), outer loop will run exactly once and inner loop will run (n-1) times
+		//space O(1)
 		public static int[] bubbleSortOptimized(int arr[]){
 			
 			if(arr==null || arr.length==0)
