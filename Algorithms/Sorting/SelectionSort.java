@@ -12,6 +12,9 @@ public class SelectionSort {
 		System.out.println(Arrays.toString(ans));*/
 	}
 	
+	// average, worst complexity O(n^2)
+	// best O(n^2)
+	//space O(1) The good thing about selection sort is it never makes more than O(n) swaps and can be useful when memory write is a costly operation.
 	public static int[] selectionSort(int arr[])
     {
 		//After each iteration of i the next smallest element goes to the ith position 
