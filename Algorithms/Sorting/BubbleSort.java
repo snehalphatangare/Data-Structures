@@ -1,6 +1,11 @@
 
 import java.util.Arrays;
 
+/*Bubble Sort algorithm in first pass, we move largest element to end 
+ * (Assuming sorting in increasing order). In second pass, we move second largest element to second last position 
+ * and so on.
+ * */
+ 
 public class BubbleSort {
 
 	public static void main(String[] args) {
@@ -10,6 +15,9 @@ public class BubbleSort {
 		System.out.println(Arrays.toString(ans));
 		
 		ans = bubbleSortOptimized(arr);
+		System.out.println(Arrays.toString(ans));
+		
+		ans=bubbleSortRecursive(arr,arr.length);
 		System.out.println(Arrays.toString(ans));
 	}
 	
@@ -67,5 +75,28 @@ public class BubbleSort {
 			
 			return arr;
 		}
-
+		
+		//Recursive Bubble Sort has no performance/implementation advantages, but can be a good question to check one’s understanding of Bubble Sort and recursion
+		/*Recursion Idea.
+		Base Case: If array size is 1, return.
+		Do One Pass of normal Bubble Sort. This pass fixes last element of current subarray.
+		Recur for all elements except last of current subarray.*/
+		public static int[] bubbleSortRecursive(int arr[],int n){
+			//Base case
+			if(n==1)
+				return arr;
+			
+			//Move largest element to the extreme right
+			int temp;
+			for (int i = 0; i < n-1; i++) {
+				if (arr[i] > arr[i + 1]) {
+					temp = arr[i];
+					arr[i] = arr[i + 1];
+					arr[i + 1] = temp;
+				}
+			}
+			//Move the next largest element to the extreme right
+			int[] ans=bubbleSortRecursive(arr,n-1);
+			return ans;
+		}
 }
