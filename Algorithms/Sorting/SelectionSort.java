@@ -1,5 +1,10 @@
 import java.util.Arrays;
 
+/*Selection sort is like sorting playing cards. Find the smallest card put it in right position, then next smallest card.
+This algorithm first finds the smallest element in the array and exchanges it with the element in the first position, 
+then find the second smallest element and exchange it with the element in the second position, 
+and continues in this way until the entire array is sorted.*/
+
 public class SelectionSort {
 
 	public static void main(String[] args) {
