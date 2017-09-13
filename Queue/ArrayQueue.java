@@ -24,7 +24,7 @@ public class ArrayQueue {
     {  return (front > rear); }
       
     // Method to add an item to the queue. 
-    // It changes rear and size
+    // 1. Check if queue is full 2. Increase rear. 3. Insert element at rear
     void enqueue( int item)
     {
         if (isFull(this)){
@@ -36,7 +36,7 @@ public class ArrayQueue {
     }
       
     // Method to remove an item from queue.  
-    // It changes front and size
+    // 1. Check is queue is empty 2.Get the element at front. 3. Decrement front
     Object dequeue()
     {
         if (isEmpty(this)){
