@@ -1,5 +1,8 @@
 import java.util.Arrays;
 
+//Insertion sort is efficient for small arrays but not suitable for large data sets.
+//Insertion sort is stable sorting algorithm i.e. it does not change the relative order of elements with equal keys
+
 public class InsertionSort {
 
 	public static void main(String[] args) {
