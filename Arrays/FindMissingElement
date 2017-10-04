@@ -6,5 +6,7 @@ class Solution {
         for(int n:nums)
             sum2+=n;
         return sum1-sum2;
+        
+        //Approach 2: XOR all numbers 1-n. XOR all elements of array. XOR the two results to get missing number
     }
 }
