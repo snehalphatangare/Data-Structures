@@ -1,0 +1,32 @@
+class Solution {
+    public String reverseStr(String s, int k) {
+        
+        char[] reverseArr = new char[s.length()];
+        reverseArr=s.toCharArray();
+        System.out.println("reverseArr= "+String.valueOf(reverseArr)+" "+s.length());
+        //i=i+2*k (because we want to skip 2k characters. k already reversed and k to skip)
+        for(int i=0;i< s.length()-1;i+=2*k){
+            int start=i;
+            int end=((start+k)-1);
+            System.out.println("i, start, end = "+i+" "+start+" "+end);
+            if(start < s.length()-1){
+                if(end > s.length()-1)//If less than k characters left
+                    end=s.length()-1;
+                reverseArr=reverse(reverseArr,start,end);
+                System.out.println("after reversing k characters "+String.valueOf(reverseArr));
+            }
+        }
+        return String.valueOf(reverseArr);
+    }
+    
+    private char[] reverse(char[] arr, int start,int end){
+        while(start<=end){
+            char temp= arr[start];
+            arr[start]=arr[end];
+            arr[end]=temp;
+            start++;
+            end--;
+        }
+        return arr;
+    }
+}
