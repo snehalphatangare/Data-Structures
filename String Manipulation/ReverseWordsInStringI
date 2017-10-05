@@ -1,0 +1,30 @@
+public class Solution {
+    public String reverseWords(String s) {
+      /*  Stack<String> stk= new Stack<String>();
+       String[] lstStr= s.split(" +");
+        System.out.println("lstStr "+ lstStr.length);
+        for(String str: lstStr){
+            stk.push(str);
+        }
+        String resultStr="";
+        while(!stk.isEmpty()){
+            resultStr+=stk.pop();
+            resultStr+=" ";
+        }
+        return resultStr.trim();*/
+        
+        //Approach 2
+        s=s.trim();
+        if(s.length() > 0){
+            String[] lstStr= s.split(" +");
+            System.out.println("lstStr "+ lstStr.length);
+            Collections.reverse(Arrays.asList(lstStr));
+            //String resultStr= String.valueOf(lstStr);
+            //System.out.println("resultStr "+ resultStr);
+            return String.join(" ", lstStr);
+            
+        }
+        else
+            return s;
+    }
+}
