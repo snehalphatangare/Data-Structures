@@ -1,0 +1,56 @@
+class Solution {
+
+ public int solution(int[] A) {
+
+     // write your code in Java SE 8
+
+     if(A.length <= 1){
+
+         return A.length;
+
+     }
+
+     //Create a set of distinct locations
+
+     HashSet<Integer> setLocations= new HashSet<Integer>();
+
+     for(Integer location: A){
+
+         setLocations.add(location);
+
+     }
+
+     
+
+     int left=0;
+
+     int right= 1;
+
+     while(right < A.length && !setLocations.isEmpty()){
+
+         setLocations.remove(A[right]);
+
+             if(A[right] != A[left]){
+
+                 right++;
+
+             }
+
+             else if(A[right] == A[left]){
+
+                 left++;
+
+                 right++;
+
+             }
+
+     }
+
+     return right- left;
+
+     
+
+ }
+
+}
+
