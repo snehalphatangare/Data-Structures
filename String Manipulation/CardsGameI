@@ -1,0 +1,35 @@
+class Solution {
+    public int solution(String A, String B) {
+        
+        // write your code in Java SE 8
+        int numOfCards= A.length();
+        int AlecWinCount=0;
+        for(int i=0;i< numOfCards;i++){
+                boolean result=checkAlecWins(A.charAt(i),B.charAt(i));
+                if(result)
+                    AlecWinCount++;
+            }
+            return AlecWinCount;
+        }
+    private static boolean checkAlecWins(char a,char b){
+       String s ="AKQJT";
+        
+         if(Character.isDigit(a) && Character.isDigit(b)){
+                return a>b;
+          }//If Alec card is not digit and Bob's card is digit
+        else if(!Character.isDigit(a) && Character.isDigit(b))
+                return true;
+        else if(Character.isDigit(a) && !Character.isDigit(b)){
+                return false;
+                }
+       else{
+           int first = s.indexOf(a);
+           int second = s.indexOf(b);
+           if(first<second){
+               return true;
+             }
+           }
+            
+        return false;
+    }
+}
