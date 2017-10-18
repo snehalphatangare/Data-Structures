@@ -1,0 +1,50 @@
+public class ValidWordAbbr {
+  //For all the words in dictionary create Map of abbreviation to the list of matching words.
+	HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
+  
+    public ValidWordAbbr(String[] dict) {
+        if (dict == null || dict.length == 0) {
+        	return;
+        }
+        
+        for (String s : dict) {
+        	String str = "";
+        	if (s.length() <= 2) {
+        		abvr = s;
+        	} else { //Create abbreviation for the word
+        		abvr += s.charAt(0) + (s.length() - 2) + s.charAt(s.length() - 1);
+        	}
+          
+          //Populate map
+        	if (!map.containsKey(abvr)) {
+        		ArrayList<String> list = new ArrayList<String>();
+            list.add(s);
+            map.put(abvr, list);
+        	} else {
+        	    if (!map.get(abvr).contains(s)) {
+        	       	map.get(abvr).add(s); 
+        	    }
+        	}
+        }
+    }
+
+  //It is unique abbreviation in 2 cases:
+  //1. map does non contain abbreviation for given word
+  //2. map contains abbreviation for given word and it is for the same word (i.e given word was already in dictionary)
+    public boolean isUnique(String word) {
+        if (map == null || map.size() == 0) {
+            return true;
+        }
+        String str = "";
+        if (word.length() <= 2) {
+        	str =  word;
+        } else {// Create abbreviation of given word
+        	str += word.charAt(0) + (word.length() - 2) + word.charAt(word.length() - 1);
+        }
+        //If given word was already present in dictionary
+        if (map.containsKey(str) && map.get(str).size() == 1 && map.get(str).get(0).equals(word)) {
+        	return true;
+        }
+        return !map.containsKey(str);
+    }
+}
