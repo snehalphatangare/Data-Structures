@@ -80,6 +80,13 @@ public class LCA {
         return path1.get(i-1);
 	}
 	
+	/*
+	 * 1. If root = NULL, return false.
+		2. push the root’s data into arr[].
+		3.if root’s data = x, return true.
+		4.if node x is present in root’s left or right subtree, return true.
+		5. Else remove root’s data value from arr[] and return false.
+	 */
 	private static boolean findPath(Node root, int n, List<Integer> path)
     {
         if (root == null) {
