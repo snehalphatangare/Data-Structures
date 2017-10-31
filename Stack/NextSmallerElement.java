@@ -14,10 +14,11 @@ public class NextSmallerElement {
 	//T.C = O(n^2)
 
 	/*Approach 2-  Using Stack
-	 * Since we have to find next smaller element we can use LIFO i.e stack(if smallest element to right was to be found then stack could not be used)
+	 * Since we have to find next smaller element(first smaller element to right) we can use LIFO i.e stack and iterate it from right. This way you will get first smaller element to right
+	 * (if smallest element to right was to be found then stack could not be used)
 	 * Iterate the elements from right to store next smaller elements in stack.
-	 * As long as stack top element is bigger than the given number we will keep popping the stack. At some point either a smaller element will appear or 
-	 * stack will become empty. At this point we will replace the array element with the top element of the stack or put zero if the stack is empty. 
+	 * As long as stack top element is bigger than the given number we will keep popping the stack. At some point either a smaller element will appear or stack will become empty. 
+	 * At this point we will replace the array element with the top element of the stack or put zero if the stack is empty. 
 	 * This way we will try to put the number on stack then replace the number in the array and keep on moving from right to left. 
 	 * T.C= O(N). S.C=O(N)
 	 */
