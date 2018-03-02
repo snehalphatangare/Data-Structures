@@ -1,0 +1,15 @@
+class Solution {
+    //T.C= O(n) S.C=O(1)
+    public int removeDuplicates(int[] nums) {
+        int i=0;
+        for(int j=1;j<nums.length;j++){
+            if(nums[i]==nums[j]){ //Skip all the duplicate numbers
+                
+            }
+            else{ //when different number found, put the unique number next to i
+                nums[++i]=nums[j];
+            }  
+        }
+        return ++i;
+    }
+}
