@@ -132,9 +132,10 @@ public class LCA {
 	    Node l = lowestCommonAncestor(root.left, n1, n2);
 	    Node r = lowestCommonAncestor(root.right, n1, n2);
 	 
+	    //If one node is in Left subtree and another in right, then root is LCA
 	    if(l!=null&&r!=null){
 	        return root;
-	    }else{
+	    }else{ //If both nodes are in one particular subtree then then that is the LCA
 	        return l!=null?l:r;
 	    }
 	}
