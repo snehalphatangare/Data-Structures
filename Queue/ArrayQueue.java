@@ -47,7 +47,7 @@ public class ArrayQueue {
         	return null;
     	}  
         int item=array[front];
-        if(front==rear)
+        if(front==rear)//queue is empty, so re-initialize
         	front=rear=-1;
         else 
         	front++;
