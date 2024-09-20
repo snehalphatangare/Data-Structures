@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class ArrayQueue {
-	static final int MAX = 2;
+	static final int MAX = 8;
 	int front, rear, size;
     int array[] = new int[MAX];
       
