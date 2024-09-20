@@ -20,7 +20,7 @@ public class ArrayQueue {
       
     // Queue is empty when front = rear =-1
     boolean isEmpty(ArrayQueue queue)
-    {  return (front ==  -1 && rear ==-1); }
+    {  return front > rear; }
       
     // Method to add an item to the queue. 
     // 1. Check if queue is full 2. Increase rear. 3. Insert element at rear
