@@ -56,7 +56,7 @@ public class DectectLoop {
     /*
      * Floyd’s Cycle-Detection Algorithm
      * Traverse linked list using two pointers.  Move one pointer by one and other pointer by two. 
-     * If these pointers meet at some node then there is a loop.  If pointers do not meet then linked list doesn’t have loop.
+     * If these pointers meet at some node then there is a loop. The point they meet could be anywhere inside the loop, not necessarily the start of loop. If pointers do not meet then linked list doesn’t have loop.
      */
     private static Boolean detectLoop(Node head){
     	Node slow=head,fast=head;
